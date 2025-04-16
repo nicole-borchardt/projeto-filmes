@@ -1,0 +1,21 @@
+.icon-rounded {
+    background-color: #1976d2; 
+    color: white;
+    border-radius: 20%;
+    padding: 8px;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.is-invalid {
+    border: 1px solid red;
+}
+  
+.error-msg {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}

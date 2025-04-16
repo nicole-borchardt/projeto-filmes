@@ -1,0 +1,10 @@
+.equal-height {
+    display: flex;
+    align-items: stretch; 
+}
+
+.equal-height > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}

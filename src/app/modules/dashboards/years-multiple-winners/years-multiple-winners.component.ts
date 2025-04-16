@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import { Component } from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
 import {Sort, MatSortModule} from '@angular/material/sort';
 import { MoviesService } from '../../../services/movies.service';
@@ -8,16 +7,13 @@ import { takeUntil, Subject } from 'rxjs';
 @Component({
   selector: 'app-years-multiple-winners',
   standalone: true,
-  imports: [MatTableModule, MatPaginatorModule, MatSortModule],
+  imports: [MatTableModule,  MatSortModule],
   templateUrl: './years-multiple-winners.component.html',
   styleUrl: './years-multiple-winners.component.scss'
 })
 export class YearsMultipleWinnersComponent {
   public displayedColumns: string[] = ['year', 'winnerCount'];
   public ngUnsubscribe: Subject<void> = new Subject<void>();
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-
   public dataValues: MultipleWinners[] = [];
 
   constructor(

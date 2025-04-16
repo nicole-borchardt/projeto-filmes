@@ -1,1 +1,38 @@
-<p>list-movies works!</p>
+<div class="mat-elevation-z8" style="height: 100%;">
+    <h2 class="mt-2 ms-3 mb-0">List movie winners by year</h2>
+
+    <div class="d-flex p-2">
+        <div class="col-11">
+            <input id="year" class="form-control form-control-sm" name="year" type="number" [(ngModel)]="year" placeholder="Search by year" min="1" #yearInput="ngModel" [class.is-invalid]="yearInvalid">
+            <div *ngIf="yearInvalid" class="error-msg">This field is invalid.</div>
+        </div>        
+        <mat-icon class="icon-rounded ms-1 mt-1" (click)="searchMoviesByYear()" matTooltip="Click here to search movies">search</mat-icon>
+        
+    </div>
+
+    <ng-template #noMovies>
+        <p class="ms-3">No movies found.</p>
+    </ng-template>
+
+    <div *ngIf="dataValues.length > 0; else noMovies">
+        <table mat-table [dataSource]="dataValues" matSort (matSortChange)="sortData($event)">
+            <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="id"> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="year">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="year"> Year </th>
+            <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="title"> Title </th>
+            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>

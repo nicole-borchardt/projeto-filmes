@@ -22,6 +22,41 @@ export class MoviesService  extends BaseService {
     );
   }
 
+  public GetStudiosWithWinCount(): Observable<any> {
+    const url = this.getAppSettings()+'?projection=studios-with-win-count';
+  
+    return this.http.get(url, {headers: this.getAuthHeaders()}).pipe(
+      map((res: any) => {
+        return res;
+      }),
+      shareReplay()
+    );
+  }
+
+  public GetIntervalForProducers(): Observable<any> {
+    const url = this.getAppSettings()+'?projection=max-min-win-interval-for-producers';
+  
+    return this.http.get(url, {headers: this.getAuthHeaders()}).pipe(
+      map((res: any) => {
+        return res;
+      }),
+      shareReplay()
+    );
+  }
+
+  public GetListMoviesByYear(year?: number): Observable<any> {
+    const url = this.getAppSettings()+'?winner=true&year='+year;
+  
+    return this.http.get(url, {headers: this.getAuthHeaders()}).pipe(
+      map((res: any) => {
+        return res;
+      }),
+      shareReplay()
+    );
+  }
+
+  
+
  /* public BuscarAgentesOperacaoComPaginacao(params:any): Observable<any> {  
     const url = this.getAppSettings()+'/'+nomeController+'/BuscarComPaginacao?NumeroPagina='+params.numPagina+'&tamanhoPagina='+params.tamanhoPagina+
                                       '&idEmpresa='+(params.idEmpresa ? params.idEmpresa : '')+
