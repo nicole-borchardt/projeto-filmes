@@ -2,8 +2,7 @@
   <span>Frontend Angular Test</span>
 </mat-toolbar>
 
-<mat-sidenav-container class="main-layout" autosize>
-  <!-- Sidebar -->
+<mat-sidenav-container class="main-layout" autosize style="height: 100%;">
   <mat-sidenav mode="side" opened>
     <mat-nav-list>
       <a mat-list-item
@@ -11,7 +10,6 @@
          routerLinkActive="active">
         Dashboard
       </a>
-
       <a mat-list-item
          routerLink="/list-movies"
          routerLinkActive="active">
@@ -20,7 +18,6 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <!-- Conteúdo principal -->
   <mat-sidenav-content class="content p-4">
     <router-outlet></router-outlet>
   </mat-sidenav-content>

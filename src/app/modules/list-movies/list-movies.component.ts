@@ -46,8 +46,6 @@ export class ListMoviesComponent {
           return;
         }
 
-        console.info(res);
-
         this.dataValues = res.content;
 
         this.pageSize = res.pageable.pageSize;

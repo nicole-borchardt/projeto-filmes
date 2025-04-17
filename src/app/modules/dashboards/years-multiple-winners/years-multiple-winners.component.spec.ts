@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { YearsMultipleWinnersComponent } from './years-multiple-winners.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('YearsMultipleWinnersComponent', () => {
   let component: YearsMultipleWinnersComponent;
@@ -8,7 +9,7 @@ describe('YearsMultipleWinnersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [YearsMultipleWinnersComponent]
+      imports: [YearsMultipleWinnersComponent, HttpClientTestingModule, NoopAnimationsModule]
     })
     .compileComponents();
     

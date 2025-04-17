@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TopStudioWinnersComponent } from './top-studio-winners.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('TopStudioWinnersComponent', () => {
   let component: TopStudioWinnersComponent;
@@ -8,7 +9,7 @@ describe('TopStudioWinnersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TopStudioWinnersComponent]
+      imports: [TopStudioWinnersComponent, HttpClientTestingModule, NoopAnimationsModule]
     })
     .compileComponents();
     
