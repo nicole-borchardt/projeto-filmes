@@ -13,7 +13,7 @@ Cada view pode ser acessada pelo menu de navegação da aplicação.
 
 ---
 
-## 📊 Dashboard
+## Dashboard
 
 A view de Dashboard exibe:
 
@@ -24,7 +24,7 @@ A view de Dashboard exibe:
 
 ---
 
-## 🎞 Lista de Filmes
+## Lista de Filmes
 
 A view de Lista de Filmes apresenta:
 
@@ -36,7 +36,7 @@ A view de Lista de Filmes apresenta:
 
 ---
 
-## 🧪 Testes Unitários
+## Testes Unitários
 
 Foram implementados testes unitários para todas as funcionalidades principais, cobrindo:
 
@@ -51,7 +51,7 @@ Os testes foram criados utilizando o `TestBed` do Angular com mocks e spies.
 
 ### Rodando a aplicação
 
-Rode `ng serve` para executar o servidor de desenvolimento. Acesso o link `http://localhost:4200/` no navegador. 
+Rode `ng serve` para executar o servidor de desenvolvimento. Acesso o link `http://localhost:4200/` no navegador. 
 
 ### Rodando os testes
 
