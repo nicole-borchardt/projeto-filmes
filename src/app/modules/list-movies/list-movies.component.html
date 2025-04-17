@@ -1,0 +1,49 @@
+<div class="table-container">
+    <h2>List movies</h2>
+
+    <table mat-table [dataSource]="dataValues" class="mat-elevation-z8 mb-1">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="year">
+        <th mat-header-cell *matHeaderCellDef>
+          <div style="display: flex; flex-direction: column; align-items: flex-start;">
+            <span style="font-weight: 500;">Year</span>
+            <input class="form-control form-select-sm" type="number" placeholder="Filter by year" [(ngModel)]="filterYear" (change)="onFilterChange()" style="width: 150px;">
+          </div>
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.year }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Title</th>
+        <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="winner">
+        <th mat-header-cell *matHeaderCellDef>
+          <div style="display: flex; flex-direction: column; align-items: flex-start;">
+            <span style="font-weight: 500;">Winner?</span>
+            <select class="form-select form-select-sm" [(ngModel)]="filterWinner" (change)="onFilterChange()" style="width: 100px;">
+              <option value="" selected>Yes/No</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.winner ? 'Yes' : 'No' }}</td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    <mat-paginator [length]="totalItems"
+                   [pageSize]="pageSize"
+                   [pageSizeOptions]="[5, 10, 20]"
+                   (page)="onPageChange($event)">
+    </mat-paginator>
+  </div>
+  

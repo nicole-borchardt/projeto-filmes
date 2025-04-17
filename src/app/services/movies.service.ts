@@ -55,25 +55,19 @@ export class MoviesService  extends BaseService {
     );
   }
 
-  
+  public GetMovies(filters?: any): Observable<any> {
+    console.info(filters);
 
- /* public BuscarAgentesOperacaoComPaginacao(params:any): Observable<any> {  
-    const url = this.getAppSettings()+'/'+nomeController+'/BuscarComPaginacao?NumeroPagina='+params.numPagina+'&tamanhoPagina='+params.tamanhoPagina+
-                                      '&idEmpresa='+(params.idEmpresa ? params.idEmpresa : '')+
-                                      '&codigo='+(params.codigo ? params.codigo : '')+
-                                      '&razaoSocial='+(params.razaoSocial ? params.razaoSocial : '')+
-                                      '&cnpj='+(params.cnpj ? params.cnpj : '')+
-                                      '&cnab='+(params.cnab ? params.cnab : '')+
-                                      '&ativo='+(typeof params.ativo != 'undefined' ? params.ativo : '')+
-                                      '&campoOrdenacao='+(params.campoOrdenacao ? params.campoOrdenacao : '')+
-                                      '&direcaoOrdenacao='+(params.direcaoOrdenacao ? params.direcaoOrdenacao : '');
+    const url = this.getAppSettings()+'?page='+filters.page+
+                                      '&size='+filters.size +
+                                      '&winner='+filters.winner+
+                                      '&year='+(filters.year ? filters.year : '');
   
     return this.http.get(url, {headers: this.getAuthHeaders()}).pipe(
       map((res: any) => {
-        return res; 
+        return res;
       }),
       shareReplay()
     );
-  }*/
-
+  }
 }

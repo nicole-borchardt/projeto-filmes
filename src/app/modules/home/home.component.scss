@@ -1,21 +1,31 @@
-.topbar {
-    position: fixed;
+.mat-toolbar {
+    font-family: 'Roboto', sans-serif;
+    padding: 0 30px;
+    background-color: #15192b; // sobrescreve a cor padrão
+    height: 50px;
+  }
+
+  /* styles.css ou styles.scss */
+
+  
+  mat-toolbar {
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-}
+    z-index: 1000;
+  }
   
-.main-layout {
-    display: flex;
-
-    height: calc(100vh - 64px);
-}
-
+  mat-sidenav {
+    width: 220px;
+    background: #fafafa;
+    border-right: 1px solid #ddd;
+  }
   
-.content {
-    flex: 1;
-    padding: 24px;
-    overflow-y: auto;
-}
+  mat-nav-list a {
+    margin: 4px 0;
+    border-radius: 4px;
+  }
+  
+  mat-nav-list a.active {
+    background-color: #e0e0e0;
+  }
   

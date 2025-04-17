@@ -9,13 +9,13 @@ import { MatTooltip } from '@angular/material/tooltip';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-list-movies',
+  selector: 'app-list-movies-year',
   standalone: true,
   imports: [MatTableModule,  MatSortModule, FormsModule, MatIcon, MatTooltip, CommonModule],
-  templateUrl: './list-movies.component.html',
-  styleUrl: './list-movies.component.scss'
+  templateUrl: './list-movies-year.component.html',
+  styleUrl: './list-movies-year.component.scss'
 })
-export class ListMoviesComponent {
+export class ListMoviesYearComponent {
   public displayedColumns: string[] = ['id', 'year', 'title'];
   public ngUnsubscribe: Subject<void> = new Subject<void>();
   public dataValues: ListMovies[] = [];
