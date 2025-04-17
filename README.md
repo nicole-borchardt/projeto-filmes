@@ -1,27 +1,59 @@
 # ProjetoFilmes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+Este projeto foi desenvolvido com [Angular CLI](https://github.com/angular/angular-cli) versão 17.3.3, como parte de um desafio técnico para consumir uma API e apresentar as informações de forma estruturada e interativa.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+A aplicação apresenta duas views principais:
 
-## Code scaffolding
+- **Dashboard**
+- **Lista de Filmes**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Cada view pode ser acessada pelo menu de navegação da aplicação.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📊 Dashboard
 
-## Running unit tests
+A view de Dashboard exibe:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. **Anos com mais de um vencedor**
+2. **Top 3 estúdios com mais vitórias**
+3. **Produtores com maior e menor intervalo entre vitórias**
+4. **Vencedores por ano**, com seleção dinâmica via campo de busca.
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🎞 Lista de Filmes
 
-## Further help
+A view de Lista de Filmes apresenta:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Todos os filmes da base de dados.
+- Paginação.
+- Filtros por:
+  - **Ano**
+  - **Vencedor (sim/não)**
+
+---
+
+## 🧪 Testes Unitários
+
+Foram implementados testes unitários para todas as funcionalidades principais, cobrindo:
+
+- Criação de componentes
+- Comportamento de filtros e paginação
+- Requisições à API
+- Comportamentos de inicialização e interação do usuário
+
+Os testes foram criados utilizando o `TestBed` do Angular com mocks e spies.
+
+---
+
+### Rodando a aplicação
+
+Rode `ng serve` para executar o servidor de desenvolimento. Acesso o link `http://localhost:4200/` no navegador. 
+
+### Rodando os testes
+
+Rode `ng test` para executar os teste unitários via [Karma](https://karma-runner.github.io).
+
