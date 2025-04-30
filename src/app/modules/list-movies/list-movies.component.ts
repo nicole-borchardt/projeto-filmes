@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { PageEvent } from '@angular/material/paginator';
 import { takeUntil, Subject } from 'rxjs';
@@ -24,6 +24,8 @@ export class ListMoviesComponent {
   public pageSize:number = 10;
   public totalItems:number = 0;
   public currentPage:number = 0;
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private moviesService: MoviesService) {}
 
@@ -59,6 +61,10 @@ export class ListMoviesComponent {
   }
 
   onFilterChange() {
+    if (this.paginator) {
+      this.paginator.firstPage();
+    }
+
     this.currentPage = 0; 
     this.getMovies();
   }
